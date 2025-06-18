@@ -1,0 +1,217 @@
+/* Root variables for colors and spacing */
+:root {
+  --color-bg: #f7f9fc;
+  --color-primary: #2563eb;    /* Blue */
+  --color-primary-hover: #1d4ed8;
+  --color-success: #16a34a;    /* Green */
+  --color-error: #dc2626;      /* Red */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-border: #e2e8f0;
+  --color-white: #ffffff;
+
+  --border-radius: 8px;
+  --box-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Forms and inputs */
+form,
+.form-section {
+  background: var(--color-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  margin-bottom: 2.5rem;
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+form:hover,
+.form-section:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  outline-offset: 2px;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  font-weight: 500;
+  font-family: var(--font-family);
+  margin-bottom: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary);
+}
+
+button {
+  padding: 0.65rem 1.5rem;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+  align-self: flex-start;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--color-primary-hover);
+  outline: none;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Layout for forms with inputs and buttons */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-row > * {
+  flex: 1 1 auto;
+  min-width: 180px;
+}
+
+.flex-row button {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+/* Grid for cards */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-light);
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card p {
+  margin: 0.25rem 0;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.card p.font-medium {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: var(--color-text-secondary);
+}
+
+.text-red {
+  color: var(--color-error);
+}
+
+.loading,
+.error-message {
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.loading {
+  color: var(--color-text-secondary);
+}
+
+.error-message {
+  color: var(--color-error);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  .flex-row > * {
+    min-width: 100%;
+  }
+}

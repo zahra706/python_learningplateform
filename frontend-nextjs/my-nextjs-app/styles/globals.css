@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for text gradient if needed */
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
